@@ -15,5 +15,4 @@ jobs:
         with:
           context: .
           file: ./dockerfile
-          push: true
-          tags: abhicloud11/nginx:${{ github.sha }}
+          tags: abhicloud11/nginx
