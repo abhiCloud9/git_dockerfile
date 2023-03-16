@@ -2,7 +2,7 @@ name: Docker Build
 
 on:
   push:
-    branches: docker_test
+    branches: docker_test/*
 
 jobs:
   build:
