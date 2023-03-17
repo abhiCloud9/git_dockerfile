@@ -6,22 +6,19 @@ on:
       - docker_test
 
 jobs:
-  build:
+  build & push:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Build the Docker image
-        uses: docker/build-push-action@v2
+      - name: clonning the repo
+        uses: actions/checkout@v2
+      - name: logging the container registry
+        uses: docker/login-action@v1
         with:
-          context: .
-          file: ./dockerfile
-          tags: abhicloud11/nginx
-      - name: Push image to DockerHub
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: build & push image
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: abhicloud11/nginx
-          registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
