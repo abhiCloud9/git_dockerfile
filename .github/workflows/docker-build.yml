@@ -6,7 +6,7 @@ on:
       - docker_test
 
 jobs:
-  build & push:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: clonning the repo
