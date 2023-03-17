@@ -23,5 +23,5 @@ jobs:
           push: true
           tags: abhicloud11/nginx
           registry: docker.io
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ DOCKERHUB_USERNAME }}
+          password: ${{ DOCKERHUB_TOKEN }}
